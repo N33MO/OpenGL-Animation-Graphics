@@ -305,7 +305,12 @@ void Renderer::draw_scene(Shader &shader) // called by display(window)
     for(size_t i = 0; i < obj_list.size(); i++)
     {
         // //
-        obj_list[i].obj_color = glm::vec4(color_obj[0], color_obj[1], color_obj[2], color_obj[3]);
+        if (!m_lightings->direction_light.status && !m_lightings->point_light.status) {
+            obj_list[i].obj_color = glm::vec4( 0.0f, 0.0f, 0.0f, 1.0f );
+        }
+        else{
+            obj_list[i].obj_color = glm::vec4(color_obj[0], color_obj[1], color_obj[2], color_obj[3]);
+        }
         if( obj_list[i].obj_name == "cube" && model_select == 0 )
         {
             // Draw cube
