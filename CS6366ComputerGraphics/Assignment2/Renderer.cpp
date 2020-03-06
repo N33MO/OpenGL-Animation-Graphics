@@ -327,7 +327,7 @@ void Renderer::draw_scene(Shader &shader) // called by display(window)
         std::string texPath, normPath;
         texPath = modelName + "_diffuse.png";
         normPath = modelName + "_normal.png";
-        std::string absolute = "/Users/n33mo/MyLib/XcodeProjects/OpenGLProjects/OpenGLProjects/CS6366ComputerGraphics/Assignment2/";
+        std::string absolute = "dont know why i have to use absolute path";
         GLuint texID = TextureLoading::LoadTexture( absolute + texPath );
         GLuint normID = TextureLoading::LoadTexture( absolute + normPath );
         glActiveTexture( GL_TEXTURE0 );
